@@ -1,11 +1,13 @@
 {
-  "fileGlob": [
-    "./src/**/*.ts"
-  ],
-  "compilerOptions": {
-    "target": "es5",
-    "noImplicitAny": true,
-    "alwaysStrict": true,
-    "module": "commonjs"
-  }
+    "filesGlob": [
+        "./src/**/*.ts"
+    ],
+    "compilerOptions": {
+        "target": "es5",
+        "noImplicitAny": true,
+        "alwaysStrict": true,
+        "module": "commonjs",
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true
+    }
 }
