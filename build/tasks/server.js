@@ -9,7 +9,7 @@ gulp.task('server', ['build'], () => {
     node.kill();
   }
 
-  const package = JSON.parse(readFileSync('./package.json'))
+  const packages = JSON.parse(readFileSync('./package.json'))
 
   node = spawn('node', ['dist/index.js'], {
     stdio: 'inherit',

@@ -1,5 +1,5 @@
 import gulp from 'gulp';
 
-gulp.task('watch', () => {
+gulp.task('watch', ['server'], () => {
   gulp.watch('src/**/*', ['server']);
 })
