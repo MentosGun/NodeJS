@@ -10,40 +10,30 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var typeorm_1 = require("typeorm");
-var class_validator_1 = require("class-validator");
-var Message_1 = require("./Message");
-var User = /** @class */ (function () {
-    function User() {
+var User_1 = require("./User");
+var Message = /** @class */ (function () {
+    function Message() {
     }
     __decorate([
         typeorm_1.PrimaryGeneratedColumn(),
         __metadata("design:type", Number)
-    ], User.prototype, "id", void 0);
+    ], Message.prototype, "id", void 0);
     __decorate([
-        typeorm_1.Column({ type: "varchar", length: 255 }),
-        class_validator_1.Length(2, 255),
+        typeorm_1.Column("text"),
         __metadata("design:type", String)
-    ], User.prototype, "username", void 0);
-    __decorate([
-        typeorm_1.Column({ type: "varchar", length: 255 }),
-        class_validator_1.Length(8, 255),
-        __metadata("design:type", String)
-    ], User.prototype, "password", void 0);
-    __decorate([
-        typeorm_1.Column("date"),
-        __metadata("design:type", Date)
-    ], User.prototype, "birthdayDate", void 0);
+    ], Message.prototype, "content", void 0);
     __decorate([
         typeorm_1.Column("datetime"),
         __metadata("design:type", Date)
-    ], User.prototype, "createdAt", void 0);
+    ], Message.prototype, "createdAt", void 0);
     __decorate([
-        typeorm_1.OneToMany(function (type) { return Message_1.Message; }, function (message) { return message.user; }),
-        __metadata("design:type", Array)
-    ], User.prototype, "messages", void 0);
-    User = __decorate([
+        typeorm_1.ManyToOne(function (type) { return User_1.User; }, function (user) { return user.messages; }),
+        __metadata("design:type", User_1.User)
+    ], Message.prototype, "user", void 0);
+    Message = __decorate([
         typeorm_1.Entity()
-    ], User);
-    return User;
+    ], Message);
+    return Message;
 }());
-exports.User = User;
+exports.Message = Message;
+// (type) => {return User;}
