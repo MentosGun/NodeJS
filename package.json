@@ -2,6 +2,7 @@
   "name": "js-allumettes",
   "version": "0.1.0",
   "license": "MIT",
+  "main": "dist/index.js",
   "devDependencies": {
     "@types/express": "^4.16.0",
     "@types/node": "^10.5.1",
